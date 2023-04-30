@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.emafire003.dev.beaconbubbles.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BubbleColumnBlockMixin",
+    "BeaconBlockMixin",
+    "BeaconEntityMixin",
+    "FenceGateBlocksMixin",
+    "SignBlocksMixin",
+    "TrapdoorBlocksMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
