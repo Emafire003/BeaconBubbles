@@ -1,5 +1,6 @@
 package me.emafire003.dev.beaconbubbles.mixin;
 
+import me.emafire003.dev.beaconbubbles.BeaconBubbles;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -24,7 +25,8 @@ public abstract class BeaconBlockMixin extends BlockWithEntity
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (direction == Direction.UP && neighborState.isOf(Blocks.WATER)) {
+        //TODO maybe could be disabled if it takes up too much memory?
+        if (direction == Direction.UP && world.getBlockState(pos.up()).isOf(Blocks.WATER)) {
             world.scheduleBlockTick(pos, this, 20);
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);

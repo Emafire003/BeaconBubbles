@@ -20,9 +20,10 @@ public abstract class FenceGateBlocksMixin extends HorizontalFacingBlock {
         BubbleColumnBlock.update(world, pos.up(), state);
     }
 
+    //this is needed in order to call the method above and check
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (direction == Direction.UP && neighborState.isOf(Blocks.WATER)) {
+        if (direction == Direction.UP && world.getBlockState(pos.up()).isOf(Blocks.WATER)) {
             world.scheduleBlockTick(pos, this, 20);
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);

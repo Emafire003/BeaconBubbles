@@ -19,6 +19,7 @@ public abstract class SignBlocksMixin extends BlockWithEntity implements Waterlo
         super(settings);
     }
 
+    //this is need in order to call the method above and check
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BubbleColumnBlock.update(world, pos.up(), state);
@@ -26,7 +27,7 @@ public abstract class SignBlocksMixin extends BlockWithEntity implements Waterlo
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (direction == Direction.UP && neighborState.isOf(Blocks.WATER)) {
+        if (direction == Direction.UP && world.getBlockState(pos.up()).isOf(Blocks.WATER)) {
             world.scheduleBlockTick(pos, this, 20);
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);

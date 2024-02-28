@@ -21,7 +21,6 @@ public class BeaconEntityMixin {
 	)
 	private static void injectTickOff(World world, BlockPos pos, BlockState state, BeaconBlockEntity blockEntity, CallbackInfo ci) {
 		BlockPos copy_pos = pos.mutableCopy();
-		BeaconBubbles.LOGGER.info("Ticking normally.");
 		for(int i = pos.getY(); i < world.getHeight(); i++){
 			copy_pos = copy_pos.add(0, 1, 0);
 			state.updateNeighbors(world, copy_pos, Block.NOTIFY_LISTENERS);
@@ -35,7 +34,6 @@ public class BeaconEntityMixin {
 	)
 	private static void injectTickOn(World world, BlockPos pos, BlockState state, BeaconBlockEntity blockEntity, CallbackInfo ci) {
 		BlockPos copy_pos = pos.mutableCopy();
-		BeaconBubbles.LOGGER.info("Heallo???? SHOULD HAVE TICKED TOOOOO");
 		for(int i = pos.getY(); i < world.getHeight(); i++){
 			copy_pos = copy_pos.add(0, 1, 0);
 			state.updateNeighbors(world, copy_pos, Block.NOTIFY_LISTENERS);
