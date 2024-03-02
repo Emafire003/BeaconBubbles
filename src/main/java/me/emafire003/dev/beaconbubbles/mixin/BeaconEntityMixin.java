@@ -13,26 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BeaconBlockEntity.class)
 public class BeaconEntityMixin {
 
-	//This is need to set back the water to be flowing
-	@Inject(
-			method = "tick",
-			at = @At(value = "INVOKE", target = "Ljava/util/List;clear()V"
-					)
-	)
-	private static void injectTickOff(World world, BlockPos pos, BlockState state, BeaconBlockEntity blockEntity, CallbackInfo ci) {
-		BlockPos copy_pos = pos.mutableCopy();
-		for(int i = pos.getY(); i < world.getTopY(); i++){
-			copy_pos = copy_pos.up();
-			/*if(world.getBlockState(copy_pos).isOf(Blocks.BUBBLE_COLUMN) && world.getBlockState(copy_pos).get(BeaconBubbles.HAS_BEAM)){
-				if(!world.getBlockState(copy_pos.up()).isOf(Blocks.WATER) && !world.getBlockState(copy_pos.up()).isOf(Blocks.BUBBLE_COLUMN)){
-					world.setBlockState(copy_pos, Fluids.WATER.getStill(true).getBlockState(), Block.NOTIFY_LISTENERS);
-				}else{
-					world.setBlockState(copy_pos, Fluids.FLOWING_WATER.getFlowing(7, true).getBlockState(), Block.NOTIFY_LISTENERS);
-				}
-			}*/
-		}
-	}
-
 	@Inject(
 			method = "tick",
 			at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BeaconBlockEntity$BeamSegment;increaseHeight()V"
