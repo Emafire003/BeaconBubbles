@@ -1,8 +1,6 @@
 package me.emafire003.dev.beaconbubbles.mixin;
 
-import me.emafire003.dev.beaconbubbles.BeaconBubbles;
 import net.minecraft.block.*;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -31,14 +29,14 @@ public abstract class BeaconBlockMixin extends BlockWithEntity
         //This should update the water blocks and turn them back into flowing state stuff
         BlockPos copy_pos = pos.mutableCopy();
         for(int i = pos.getY(); i < world.getTopY(); i++){
-            copy_pos = copy_pos.up();
+            copy_pos = copy_pos.up();/*
             if(world.getBlockState(copy_pos).isOf(Blocks.BUBBLE_COLUMN) && world.getBlockState(copy_pos).get(BeaconBubbles.HAS_BEAM)){
                 if(!world.getBlockState(copy_pos.up()).isOf(Blocks.WATER) && !world.getBlockState(copy_pos.up()).isOf(Blocks.BUBBLE_COLUMN)){
                     world.setBlockState(copy_pos, Fluids.WATER.getStill(true).getBlockState(), Block.NOTIFY_LISTENERS);
                 }else{
                     world.setBlockState(copy_pos, Fluids.FLOWING_WATER.getFlowing(7, true).getBlockState(), Block.NOTIFY_LISTENERS);
                 }
-            }
+            }*/
         }
     }
 

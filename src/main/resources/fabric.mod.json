@@ -4,16 +4,16 @@
   "version": "${version}",
 
   "name": "Beacon Bubbles",
-  "description": "If a beacon beam passes through flowing water it will turn it into a water elevator!",
+  "description": "Makes bubble columns when a beacon beam passes through water! Even non-source water!",
   "authors": [
     "Emafire003"
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/beaconbubbles",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Emafire003/BeaconBubbles"
   },
 
-  "license": "GNU LGPL3",
+  "license": "MIT",
   "icon": "assets/beaconbubbles/icon.png",
 
   "environment": "*",
@@ -28,7 +28,6 @@
 
   "depends": {
     "fabricloader": ">=0.14.19",
-    "fabric-api": "*",
     "minecraft": ">=1.18-",
     "java": ">=17"
   },
