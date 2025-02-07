@@ -7,8 +7,6 @@ Make a beacon platform, place a beacon there. If the beacon is not obstructed it
 
 The water doesn't need to touch the Beacon block, you can also put a sign, fence gate or trapdoor in between them, to suspend the water mid air!
 
-[![bisecthosting](https://www.bisecthosting.com/partners/custom-banners/e9bbf36a-be01-4324-b393-dae88a01be66.webp)](https://www.bisecthosting.com/LightDev)
-
 ## Demo
 ![BeaconBubbles_demo_small-ezgif com-optimize](https://github.com/Emafire003/BeaconBubbles/assets/29462910/8a903177-803b-48b8-bdb1-1ee6cff12dd6)
 
