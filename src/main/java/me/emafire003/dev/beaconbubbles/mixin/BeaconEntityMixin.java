@@ -15,12 +15,12 @@ public class BeaconEntityMixin {
 
 	@Inject(
 			method = "tick",
-			at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BeaconBlockEntity$BeamSegment;increaseHeight()V"
+			at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BeamEmitter$BeamSegment;increaseHeight()V"
 			)
 	)
 	private static void injectTickOn(World world, BlockPos pos, BlockState state, BeaconBlockEntity blockEntity, CallbackInfo ci) {
 		BlockPos copy_pos = pos.mutableCopy();
-		for(int i = pos.getY(); i < world.getTopY(); i++){
+		for(int i = pos.getY(); i < world.getTopYInclusive(); i++){
 			copy_pos = copy_pos.add(0, 1, 0);
 			state.updateNeighbors(world, copy_pos, Block.NOTIFY_LISTENERS);
 		}
